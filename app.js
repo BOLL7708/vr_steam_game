@@ -72,10 +72,10 @@ function updateGUI(data) {
     };
 
     // Get price values
-    let price = data.is_free ? 0 : data?.price_overview?.final ?? -1;
-    let currency = data.is_free ? "" : data?.price_overview?.currency ?? "";
-    let discount = data.is_free ? 0 : data?.price_overview?.discount_percent ?? 0;
-    
+    let price = data.is_free ? 0 : typeof data.price_overview !== 'undefined' ? data.price_overview.final : -1;
+    let currency = data.is_free ? "" : typeof data.price_overview !== 'undefined' ? data.price_overview.currency : "";
+    let discount = data.is_free ? 0 : typeof data.price_overview !== 'undefined' ? data.price_overview.discount_percent : 0;
+
     // Build price text
     let priceText = "N/A";
     let discountText = discount > 0 ? ` (-${discount}%)` : "";

@@ -3,7 +3,7 @@
         <link rel="stylesheet" href="styles.css">
         <script type="application/javascript" src="app.js"></script>
     </head>
-    <body onload="init();">
+    <body>
         <div class="border">
             <div class="container">
                 <div class="banner"></div>
@@ -12,4 +12,5 @@
             </div>
         </div>
     </body>
+    <script>init();</script>
 </html>
